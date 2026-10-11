@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fuel Route Planner</title>
+  <link rel="stylesheet" href="{% static 'vendor/leaflet/leaflet.css' %}">
+  <link rel="stylesheet" href="{% static 'trips/map.css' %}">
+  <script src="{% static 'vendor/leaflet/leaflet.js' %}" defer></script>
+  <script src="{% static 'trips/map.js' %}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#trip-form">Skip to route planner</a>
+  <header class="app-header">
+    <a class="app-name" href="/">Fuel Route Planner</a>
+    <p>USA <span aria-hidden="true">/</span> 500-mile range <span aria-hidden="true">/</span> 10 mpg</p>
+  </header>
+  <main>
+    <aside class="planner" aria-label="Route planner and results">
+      <div class="panel-heading">
+        <h1>Plan a trip</h1>
+        <p class="muted">Find fuel stops using the supplied prices.</p>
+      </div>
+      <form id="trip-form" tabindex="-1">
+        <fieldset id="trip-inputs">
+          <legend class="sr-only">Trip settings</legend>
+          <div class="route-inputs">
+            <fieldset class="location-field">
+              <legend><span class="endpoint-letter" aria-hidden="true">A</span> Start</legend>
+              <label for="start-mode" class="sr-only">Start input type</label>
+              <select id="start-mode" class="input-mode"><option value="text">Address or place</option><option value="coordinates">Coordinates</option></select>
+              <label id="start-text-field"><span class="sr-only">Start location</span><input id="start-text" value="200 N Walker Ave, Oklahoma City, OK" maxlength="300" autocomplete="off" spellcheck="false" required></label>
+              <div id="start-coordinate-fields" class="pair" hidden>
+                <label>Latitude<input id="start-latitude" type="number" min="-90" max="90" step="any" value="35.4676" disabled></label>
+                <label>Longitude<input id="start-longitude" type="number" min="-180" max="180" step="any" value="-97.5164" disabled></label>
+              </div>
+            </fieldset>
+            <div class="swap-row"><button id="swap" type="button" class="text-button" aria-label="Swap start and finish"><span aria-hidden="true">↕</span> Swap locations</button></div>
+            <fieldset class="location-field">
+              <legend><span class="endpoint-letter" aria-hidden="true">B</span> Finish</legend>
+              <label for="finish-mode" class="sr-only">Finish input type</label>
+              <select id="finish-mode" class="input-mode"><option value="text">Address or place</option><option value="coordinates">Coordinates</option></select>
+              <label id="finish-text-field"><span class="sr-only">Finish location</span><input id="finish-text" value="1500 Marilla St, Dallas, TX" maxlength="300" autocomplete="off" spellcheck="false" required></label>
+              <div id="finish-coordinate-fields" class="pair" hidden>
+                <label>Latitude<input id="finish-latitude" type="number" min="-90" max="90" step="any" value="32.7767" disabled></label>
+                <label>Longitude<input id="finish-longitude" type="number" min="-180" max="180" step="any" value="-96.7970" disabled></label>
+              </div>
+            </fieldset>
+          </div>
+          <details class="trip-options">
+            <summary>Fuel and routing options</summary>
+            <div class="options-body">
+              <div class="pair">
+                <label>Initial fuel (gal)<input id="initial-fuel" type="number" min="0.0000001" max="50" step="any" aria-describedby="initial-fuel-help" required></label>
+                <label>Initial price ($/gal)<input id="initial-price" type="number" min="0" max="1000" step="any" aria-describedby="initial-fuel-help" required></label>
+              </div>
+              <p id="initial-fuel-help" class="hint">Starting fuel and price are configurable. Defaults: {{ defaults.initial_fuel_gallons }} gallons at ${{ defaults.initial_fuel_price_usd_per_gallon }}/gal. Tank capacity is fixed at 50 gallons.</p>
+              <label class="check"><input id="verify-stops" type="checkbox" aria-describedby="verification-help">Route through fuel stops</label>
+              <p id="verification-help" class="hint">{{ defaults.verify_stops|yesno:"On,Off" }} by default. Uses road distances through the selected stops. Turn off to estimate the trip without station detours.</p>
+              <label>Station distance from route (mi)<input id="corridor" type="number" min="0.000001" max="20" step="any" aria-describedby="corridor-help" required></label>
+              <p id="corridor-help" class="hint">Default: {{ defaults.station_corridor_miles }} miles. Straight-line search distance. Road access is checked when routing through stops.</p>
+            </div>
+          </details>
+          <button id="submit" class="primary-button" type="submit">Calculate route</button>
+        </fieldset>
+      </form>
+      <p id="status" role="status" aria-live="polite" tabindex="-1" class="status">Choose two US locations to begin.</p>
+      <section id="result" aria-label="Fuel plan" hidden>
+        <h2 id="result-heading" tabindex="-1">Trip estimate</h2>
+        <p id="route-label" class="route-label"></p>
+        <div class="total"><span>Total fuel cost</span><strong id="total-cost"></strong></div>
+        <p id="summary" class="trip-summary"></p>
+        <dl class="cost-breakdown">
+          <div><dt>Fuel purchases</dt><dd id="purchase-cost"></dd></div>
+          <div><dt>Starting fuel value</dt><dd id="initial-cost"></dd></div>
+          <div><dt>Fuel on arrival</dt><dd id="ending-fuel"></dd></div>
+        </dl>
+        <p id="accuracy" class="notice"></p>
+        <div class="stops-heading"><h3>Fuel stops</h3><span id="stop-count"></span></div>
+        <p id="no-stops" class="muted" hidden>Your starting fuel covers this route. No fuel stops are needed.</p>
+        <ol id="stops" class="stop-list" aria-label="Fuel stops"></ol>
+        <button id="download" class="secondary-button" type="button">Download trip JSON</button>
+        <details class="plan-details"><summary>Planning details</summary><p id="coverage" class="hint"></p></details>
+      </section>
+      <p class="data-note">Prices are from the supplied CSV. Unmapped stations are excluded.</p>
+    </aside>
+    <section class="map-panel" aria-label="Route map">
+      <div id="map" aria-label="Driving route and fuel stops"></div>
+      <div class="map-toolbar"><div><strong>Route map</strong><p id="map-caption">Calculate a trip to see the route.</p></div><button id="fit-route" class="secondary-button" type="button" disabled>Fit route</button></div>
+      <div class="map-legend" aria-label="Map legend"><span><b class="legend-endpoint">A</b> Start</span><span><b class="legend-endpoint">B</b> Finish</span><span id="stop-legend" hidden><b class="legend-stop">1</b> Fuel stop</span></div>
+    </section>
+  </main>
+  {{ defaults|json_script:"trip-defaults" }}
+  {{ tiles|json_script:"map-tiles" }}
+</body>
+</html>

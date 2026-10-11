@@ -1,0 +1,41 @@
+[
+  {
+    "canonical_opis_id": 5044,
+    "opis_ids": [
+      5044,
+      72480
+    ],
+    "matched_name": "TA Mt. Vernon #0924",
+    "matched_address": "1501 East Mt. Vernon Blvd, Mt Vernon, MO",
+    "latitude": 37.0905923,
+    "longitude": -93.8012484,
+    "source_url": "https://www.ta-petro.com/location/mo/ta-mt-vernon/",
+    "evidence": [
+      "Both CSV names normalize to the same TA Mount Vernon name and share city, state, rack ID 535 and I-44.",
+      "OPIS 5044 specifies I-44 exit 46, matching the official single TA Mount Vernon location.",
+      "OPIS 72480 omits the exit but has the same station name and highway; the current official directory lists one TA Mount Vernon location.",
+      "Both records identify official store 0924 at 1501 East Mt. Vernon Blvd; this is a shared source identity, not coordinate proximity alone."
+    ],
+    "reviewed_at": "2026-10-11",
+    "aggregation": "Average all CSV fuel-price observations belonging to these IDs; retain both IDs as aliases."
+  },
+  {
+    "canonical_opis_id": 72812,
+    "opis_ids": [
+      72812,
+      73096
+    ],
+    "matched_name": "Kwik Trip #748",
+    "matched_address": "1456 E La Salle Ave, Barron, WI",
+    "latitude": 45.40061,
+    "longitude": -91.83492,
+    "source_url": "https://www.kwiktrip.com/Maps-Downloads/Store-List",
+    "evidence": [
+      "Both CSV rows specify the identical unique Kwik Trip store 748, US 8, Barron WI and rack 295; they differ only in OPIS ID, name casing and reported price.",
+      "The current official store table lists one store 748 in Barron, at 1456 E La Salle Ave. Independent named fuel premises are at https://www.openstreetmap.org/node/12053671745 and agree within 11 meters.",
+      "Both observations identify the same physical store, with no conflicting highway direction or other identity evidence."
+    ],
+    "reviewed_at": "2026-10-11",
+    "aggregation": "Average all CSV fuel-price observations belonging to these IDs; retain both IDs as aliases."
+  }
+]

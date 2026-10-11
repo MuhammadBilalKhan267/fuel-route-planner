@@ -1,0 +1,165 @@
+{
+  "started_at": "2026-10-11T16:28:54.147052+00:00",
+  "mode": "live",
+  "dataset": {
+    "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+    "us_stations": 6626,
+    "mapped_stations": 5523,
+    "routable_stations": 5504,
+    "known_closed_stations": 17
+  },
+  "http_calls": [
+    {
+      "path": "/openrouteservice/v2/directions/driving-car/geojson",
+      "method": "POST",
+      "status": 200,
+      "quota": {
+        "x-ratelimit-limit": "2000",
+        "x-ratelimit-remaining": "1980",
+        "x-ratelimit-reset": "1791746809"
+      }
+    },
+    {
+      "path": "/openrouteservice/v2/directions/driving-car/geojson",
+      "method": "POST",
+      "status": 200,
+      "quota": {
+        "x-ratelimit-limit": "2000",
+        "x-ratelimit-remaining": "1979",
+        "x-ratelimit-reset": "1791746809"
+      }
+    }
+  ],
+  "blocked_request_paths": [],
+  "cases": [
+    {
+      "name": "long_verified",
+      "status": 200,
+      "seconds": 1.966,
+      "metadata": {
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "routing_cache_hits": 2,
+        "geocoding_cache_hits": 0,
+        "station_dataset": {
+          "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+          "us_stations": 6626,
+          "mapped_stations": 5523,
+          "routable_stations": 5504,
+          "known_closed_stations": 17
+        }
+      },
+      "distance_miles": "1089.433210",
+      "stops": 6,
+      "total_cost": "171.95"
+    },
+    {
+      "name": "long_cached",
+      "status": 200,
+      "seconds": 0.162,
+      "metadata": {
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "routing_cache_hits": 2,
+        "geocoding_cache_hits": 0,
+        "station_dataset": {
+          "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+          "us_stations": 6626,
+          "mapped_stations": 5523,
+          "routable_stations": 5504,
+          "known_closed_stations": 17
+        }
+      },
+      "distance_miles": "1089.433210",
+      "stops": 6,
+      "total_cost": "171.95"
+    },
+    {
+      "name": "long_projection",
+      "status": 200,
+      "seconds": 0.177,
+      "metadata": {
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "routing_cache_hits": 1,
+        "geocoding_cache_hits": 0,
+        "station_dataset": {
+          "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+          "us_stations": 6626,
+          "mapped_stations": 5523,
+          "routable_stations": 5504,
+          "known_closed_stations": 17
+        }
+      },
+      "distance_miles": "1082.779008",
+      "stops": 6,
+      "total_cost": "169.98"
+    },
+    {
+      "name": "long_initial_value",
+      "status": 200,
+      "seconds": 0.178,
+      "metadata": {
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "routing_cache_hits": 2,
+        "geocoding_cache_hits": 0,
+        "station_dataset": {
+          "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+          "us_stations": 6626,
+          "mapped_stations": 5523,
+          "routable_stations": 5504,
+          "known_closed_stations": 17
+        }
+      },
+      "distance_miles": "1089.433210",
+      "stops": 6,
+      "total_cost": "346.95"
+    },
+    {
+      "name": "coast_to_coast_verified",
+      "status": 200,
+      "seconds": 5.543,
+      "metadata": {
+        "routing_calls": 2,
+        "geocoding_calls": 0,
+        "routing_cache_hits": 1,
+        "geocoding_cache_hits": 0,
+        "station_dataset": {
+          "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+          "us_stations": 6626,
+          "mapped_stations": 5523,
+          "routable_stations": 5504,
+          "known_closed_stations": 17
+        }
+      },
+      "distance_miles": "2804.496924",
+      "stops": 15,
+      "total_cost": "704.34"
+    },
+    {
+      "name": "text_street_addresses",
+      "status": 200,
+      "seconds": 0.037,
+      "metadata": {
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "routing_cache_hits": 1,
+        "geocoding_cache_hits": 2,
+        "station_dataset": {
+          "revision": "309602ee01c102a5d5c114ac0c2588bcfe562a01990674673586d53432665c27",
+          "us_stations": 6626,
+          "mapped_stations": 5523,
+          "routable_stations": 5504,
+          "known_closed_stations": 17
+        }
+      },
+      "distance_miles": "382.788329",
+      "stops": 0,
+      "total_cost": "0.00"
+    }
+  ],
+  "complete": true,
+  "finished_at": "2026-10-11T16:29:02.601828+00:00",
+  "note": "Cold elapsed times include deliberate four-second spacing of external calls. Warm times have no throttle delay. No station preparation runs in a trip request."
+}

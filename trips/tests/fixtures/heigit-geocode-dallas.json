@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.80667,
+          32.78306
+        ]
+      },
+      "properties": {
+        "id": "4684888",
+        "gid": "geonames:locality:4684888",
+        "layer": "locality",
+        "source": "geonames",
+        "source_id": "4684888",
+        "name": "Dallas",
+        "confidence": 1,
+        "match_type": "exact",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Texas",
+        "region_gid": "whosonfirst:region:85688753",
+        "region_a": "TX",
+        "county": "Dallas County",
+        "county_gid": "whosonfirst:county:102080647",
+        "county_a": "DS",
+        "locality": "Dallas",
+        "locality_gid": "geonames:locality:4684888",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Dallas, TX, USA",
+        "addendum": {
+          "geonames": {
+            "feature_code": "PPLA2"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.77787,
+          32.76663
+        ]
+      },
+      "properties": {
+        "id": "4684904",
+        "gid": "geonames:county:4684904",
+        "layer": "county",
+        "source": "geonames",
+        "source_id": "4684904",
+        "name": "Dallas County",
+        "confidence": 1,
+        "match_type": "exact",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Texas",
+        "region_gid": "whosonfirst:region:85688753",
+        "region_a": "TX",
+        "county": "Dallas County",
+        "county_gid": "whosonfirst:county:102080647",
+        "county_a": "DS",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Dallas County, TX, USA",
+        "addendum": {
+          "geonames": {
+            "feature_code": "ADM2"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.02556,
+          33.11929
+        ]
+      },
+      "properties": {
+        "id": "4704482",
+        "gid": "geonames:locality:4704482",
+        "layer": "locality",
+        "source": "geonames",
+        "source_id": "4704482",
+        "name": "Lake Dallas",
+        "confidence": 1,
+        "match_type": "exact",
+        "accuracy": "centroid",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Texas",
+        "region_gid": "whosonfirst:region:85688753",
+        "region_a": "TX",
+        "county": "Denton County",
+        "county_gid": "whosonfirst:county:102087371",
+        "county_a": "DN",
+        "locality": "Lake Dallas",
+        "locality_gid": "geonames:locality:4704482",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "Lake Dallas, TX, USA",
+        "addendum": {
+          "geonames": {
+            "feature_code": "PPL"
+          }
+        }
+      }
+    }
+  ],
+  "error": null
+}

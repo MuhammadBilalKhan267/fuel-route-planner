@@ -1,0 +1,44 @@
+# Local configuration and database state
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+
+# Generated Python, cache, and test files
+.venv/
+.uv-cache/
+.cache/
+.tmp/
+__pycache__/
+*.py[cod]
+*.tmp
+*.log
+staticfiles/
+coverage.json
+coverage.xml
+.coverage
+.coverage.*
+htmlcov/
+.ruff_cache/
+
+# Retain final station data and evidence; keep research downloads local
+/data/*
+!/data/verified-station-coordinates.csv
+!/data/station-coordinate-report.md
+!/data/station-coordinate-report.json
+!/data/coordinate-sources/
+/data/coordinate-sources/*
+!/data/coordinate-sources/merged.json
+!/data/coordinate-sources/unresolved.json
+!/data/coordinate-sources/duplicate-sites.json
+!/data/coordinate-sources/status-exclusion-reviews.json
+
+# Retain one live validation record; debugging and cached runs remain local
+!/data/live-verified-stations/
+/data/live-verified-stations/*
+!/data/live-verified-stations/validation.json
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

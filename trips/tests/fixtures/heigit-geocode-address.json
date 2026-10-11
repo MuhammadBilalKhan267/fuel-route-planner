@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.520271,
+          35.468927
+        ]
+      },
+      "properties": {
+        "id": "way/589136940",
+        "gid": "openstreetmap:address:way/589136940",
+        "layer": "address",
+        "source": "openstreetmap",
+        "source_id": "way/589136940",
+        "name": "200 North Walker Avenue",
+        "housenumber": "200",
+        "street": "North Walker Avenue",
+        "postalcode": "73102",
+        "confidence": 1,
+        "match_type": "exact",
+        "accuracy": "point",
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Oklahoma",
+        "region_gid": "whosonfirst:region:85688585",
+        "region_a": "OK",
+        "county": "Oklahoma County",
+        "county_gid": "whosonfirst:county:102082577",
+        "county_a": "OL",
+        "locality": "Oklahoma City",
+        "locality_gid": "whosonfirst:locality:101714461",
+        "continent": "North America",
+        "continent_gid": "whosonfirst:continent:102191575",
+        "label": "200 North Walker Avenue, Oklahoma City, OK, USA"
+      }
+    }
+  ],
+  "bbox": [
+    -97.520271,
+    35.468927,
+    -97.520271,
+    35.468927
+  ]
+}

@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light;
+  --ink: #243035;
+  --muted: #5b686d;
+  --line: #d4dcde;
+  --control-line: #879798;
+  --surface: #f4f6f5;
+  --accent: #215c47;
+  --error: #a32b25;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 14px/1.5 system-ui, sans-serif; color: var(--ink); background: white; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .55; }
+:focus-visible { outline: 3px solid #256cba; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link { position: fixed; top: 8px; left: 16px; transform: translateY(-150%); padding: 12px 16px; background: white; color: var(--ink); z-index: 2000; }
+.skip-link:focus { transform: translateY(0); }
+.app-header { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 24px; border-bottom: 1px solid var(--line); }
+.app-name { color: var(--ink); font-size: 17px; font-weight: 650; letter-spacing: -.3px; text-decoration: none; }
+.app-header p { margin: 0; color: var(--muted); font-size: 12px; }
+.app-header p span { padding: 0 10px; color: #748087; }
+main { display: grid; grid-template-columns: 384px minmax(0, 1fr); height: calc(100dvh - 64px); }
+.planner { overflow-y: auto; min-width: 0; padding: 24px; border-right: 1px solid var(--line); scrollbar-gutter: stable; }
+h1 { font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.5px; margin: 0; }
+h2, h3 { font-size: 15px; line-height: 1.4; margin: 0; font-weight: 650; }
+p { margin: 8px 0; }
+.muted, .hint, .status { color: var(--muted); }
+.hint { font-size: 12px; line-height: 1.5; }
+.panel-heading { margin-bottom: 24px; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+legend { padding: 0; }
+.location-field { position: relative; padding-top: 8px; }
+.location-field legend { display: flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; }
+.endpoint-letter { width: 24px; height: 24px; border: 1px solid var(--ink); border-radius: 50%; text-align: center; line-height: 22px; font-size: 12px; }
+label { display: block; font-size: 12px; font-weight: 500; }
+input:not([type=checkbox]), select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--control-line); border-radius: 4px; color: var(--ink); background: white; }
+input:not([type=checkbox]) { margin-top: 4px; }
+input:not([type=checkbox]):hover, select:hover { border-color: var(--ink); }
+input:disabled, select:disabled { color: var(--muted); background: var(--surface); }
+.input-mode { position: absolute; top: -46px; right: 0; width: 150px; padding-left: 8px; border: 0; font-size: 12px; color: var(--muted); }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.swap-row { display: flex; justify-content: flex-end; height: 44px; }
+.text-button { min-height: 44px; border: 0; background: transparent; color: var(--muted); padding: 8px 0 8px 12px; font-size: 12px; }
+.text-button span { padding-right: 5px; font-size: 17px; }
+.text-button:hover { color: var(--ink); text-decoration: underline; }
+.trip-options { margin: 24px 0 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; min-height: 44px; padding: 12px 0; font-size: 13px; font-weight: 500; }
+summary:hover { color: var(--accent); }
+.options-body { padding: 4px 0 16px; }
+.options-body > label { margin-top: 16px; }
+.options-body .check { display: flex; gap: 10px; align-items: center; min-height: 44px; font-size: 13px; }
+input[type=checkbox] { flex: 0 0 auto; width: 18px; height: 18px; margin: 0; accent-color: var(--accent); }
+.primary-button, .secondary-button { border: 1px solid transparent; min-height: 44px; border-radius: 4px; padding: 10px 16px; font-weight: 600; }
+.primary-button { width: 100%; background: var(--accent); color: white; }
+.primary-button:hover:not(:disabled) { background: #174735; }
+.secondary-button { background: white; border-color: var(--line); color: var(--ink); font-size: 12px; }
+.secondary-button:hover:not(:disabled) { background: var(--surface); }
+.status { font-size: 12px; margin: 12px 0 0; }
+.status.error { color: var(--error); padding: 12px; border-left: 3px solid var(--error); background: #fff4f2; }
+#result { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 20px; }
+.total { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 12px; }
+.total > span { color: var(--muted); font-size: 13px; }
+.total strong { font-size: 30px; line-height: 1.2; font-weight: 600; letter-spacing: -.7px; }
+.total strong, dd, .stop-cost, .stop-number { font-variant-numeric: tabular-nums; }
+.trip-summary { font-size: 13px; margin-top: 12px; }
+.route-label { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.cost-breakdown { margin: 16px 0; font-size: 12px; }
+.cost-breakdown div { display: flex; justify-content: space-between; gap: 16px; padding: 4px 0; }
+dt { color: var(--muted); }
+dd { margin: 0; font-weight: 500; }
+.notice { border-left: 2px solid #899a91; padding: 0 0 0 12px; font-size: 12px; color: var(--muted); margin: 16px 0 24px; }
+.stops-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+#stop-count { color: var(--muted); font-size: 12px; }
+.stop-list { padding: 0; margin: 12px 0 20px; list-style: none; }
+.stop-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 10px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.stop-number { background: var(--accent); color: white; border-radius: 50%; width: 26px; height: 26px; text-align: center; line-height: 26px; font-size: 12px; margin-top: 9px; }
+.stop-name { display: block; width: 100%; min-height: 44px; padding: 6px 0; background: transparent; border: 0; text-align: left; font-size: 13px; font-weight: 650; line-height: 1.4; color: var(--ink); overflow-wrap: anywhere; }
+.stop-name:hover { color: var(--accent); text-decoration: underline; }
+.stop-list p { font-size: 12px; margin: 4px 0; }
+.stop-cost { font-weight: 600; }
+#no-stops { font-size: 13px; margin: 12px 0 20px; }
+#download { width: 100%; }
+.plan-details { margin-top: 12px; }
+.data-note { font-size: 11px; color: var(--muted); border-top: 1px solid var(--line); margin: 24px 0 0; padding-top: 16px; }
+.map-panel { position: relative; min-width: 0; min-height: 0; }
+#map { height: 100%; background: #e6ece7; }
+.leaflet-tile-pane { filter: saturate(.55); }
+.map-toolbar { position: absolute; top: 20px; left: 20px; right: 20px; z-index: 500; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; background: white; border: 1px solid var(--line); border-radius: 4px; }
+.map-toolbar strong { font-size: 13px; font-weight: 600; }
+.map-toolbar p { font-size: 12px; color: var(--muted); margin: 2px 0 0; }
+.map-toolbar button { flex: 0 0 auto; }
+.map-legend { position: absolute; bottom: 28px; left: 20px; z-index: 500; display: flex; gap: 16px; padding: 10px 12px; background: white; border: 1px solid var(--line); border-radius: 4px; font-size: 11px; }
+.map-legend span { display: flex; align-items: center; gap: 6px; }
+.map-legend b { display: inline-block; width: 20px; height: 20px; line-height: 18px; text-align: center; border: 1px solid var(--ink); border-radius: 50%; font-size: 10px; }
+.map-legend .legend-stop { background: var(--accent); border-color: var(--accent); color: white; }
+.leaflet-control-zoom { margin-top: 116px !important; margin-left: 20px !important; border: 1px solid var(--line) !important; box-shadow: none !important; }
+.leaflet-control-zoom a { width: 40px !important; height: 40px !important; line-height: 40px !important; }
+.route-marker { background: var(--accent); border: 2px solid white; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 650; box-shadow: 0 1px 4px #0004; }
+.route-marker.endpoint { background: var(--ink); }
+@media (max-width: 800px) {
+  .app-header { padding: 14px 20px; }
+  .app-header p { display: none; }
+  main { display: flex; flex-direction: column; height: auto; }
+  .planner { overflow: visible; border-right: 0; padding: 24px 20px; scrollbar-gutter: auto; }
+  .panel-heading { margin-bottom: 20px; }
+  .map-panel { height: 440px; border-top: 1px solid var(--line); }
+  .map-toolbar { top: 12px; left: 12px; right: 12px; padding: 10px 12px; }
+  .map-legend { left: 12px; gap: 12px; }
+  .leaflet-control-zoom { margin-left: 12px !important; }
+  input:not([type=checkbox]) { font-size: 16px; }
+}
+@media (forced-colors: active) {
+  .primary-button, .route-marker, .stop-number { border: 1px solid ButtonText; }
+}

@@ -1,0 +1,172 @@
+[
+  {
+    "opis_id": 75,
+    "category": "maps_permanent",
+    "station": "Good 2 Go #709 / Montrose Travel Center",
+    "city": "Montrose",
+    "state": "CO",
+    "source_url": "https://www.google.com/maps?cid=4870511311745792723",
+    "reason": "The exact station listing was recorded as permanently closed during the property review.",
+    "review_record": "root-colorado-name-recovery-candidates.json"
+  },
+  {
+    "opis_id": 491,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - ONE9 Travel Center",
+    "city": "Heiskell",
+    "state": "TN",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 2956,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - Pilot Travel Center",
+    "city": "Charlotte",
+    "state": "NC",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 3064,
+    "category": "maps_temporary",
+    "station": "Ports to Plains Travel Plaza",
+    "city": "Lamar",
+    "state": "CO",
+    "source_url": "https://www.google.com/maps?cid=18438374685156076465",
+    "reason": "The exact station listing was recorded as temporarily closed during the property review.",
+    "review_record": "root-colorado-name-recovery-candidates.json"
+  },
+  {
+    "opis_id": 3616,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - Pilot Travel Center",
+    "city": "Toledo",
+    "state": "OH",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 4690,
+    "category": "maps_temporary",
+    "station": "PWI #401 / current SunMart",
+    "city": "Aledo",
+    "state": "TX",
+    "source_url": "https://www.google.com/maps/place/Sun+Mart/data=!4m5!3m4!1s0x864e0e87ac91fcd7:0x3ba5bf6b5aa89d32!8m2!3d32.7201702!4d-97.5333976",
+    "reason": "The exact station listing was recorded as temporarily closed during the property review.",
+    "review_record": "independent-numbered-continuity-conflict-reviews.json"
+  },
+  {
+    "opis_id": 6564,
+    "category": "availability_conflict",
+    "station": "Former Flying J franchise #970 / Broadway truck-stop premises",
+    "city": "Pasco",
+    "state": "WA",
+    "source_url": "https://broadwaygroup.com/locations/pasco-truck-stop/",
+    "reason": "Maps reports permanent closure while the operator page advertises fuel and 24/7 service. Excluded conservatively; permanent closure of successor operations is not established.",
+    "review_record": "independent-numbered-continuity-conflict-reviews.json"
+  },
+  {
+    "opis_id": 9382,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - Pilot Travel Center",
+    "city": "Eaton",
+    "state": "OH",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 10101,
+    "category": "maps_permanent",
+    "station": "Former Pilot Travel Center #65",
+    "city": "Augusta",
+    "state": "GA",
+    "source_url": "https://www.google.com/maps/place/Pilot+Travel+Center/@33.4800405,-82.1308862,539m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88f9d15091a25beb:0xa2592495643d06d7!8m2!3d33.4800405!4d-82.1308862!16s%2Fg%2F1tycxhtw",
+    "reason": "The exact station listing was recorded as permanently closed during the property review.",
+    "review_record": "root-overture-current-map-conflict-reviews.json"
+  },
+  {
+    "opis_id": 20083,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - Flying J Travel Plaza",
+    "city": "Anthony",
+    "state": "TX",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 60248,
+    "category": "maps_permanent",
+    "station": "Metro",
+    "city": "Avenel",
+    "state": "NJ",
+    "source_url": "https://www.google.com/maps?cid=1493005808267694393",
+    "reason": "The exact station listing was recorded as permanently closed during the property review.",
+    "review_record": "regional-exit-metro-conflict-reviews.json"
+  },
+  {
+    "opis_id": 64407,
+    "category": "former_station",
+    "station": "Former Circle K / Corner Store #2741527",
+    "city": "Premont",
+    "state": "TX",
+    "source_url": "https://www.cushmanwakefield.com/en/united-states/properties/for-sale/commercial/tx/premont/201-south-broadway/2741527---201-south-broadway---premont-tx-s",
+    "reason": "The seller advertises the original numbered property as a former gas station for sale.",
+    "review_record": "independent-circlek-history-conflict-reviews.json"
+  },
+  {
+    "opis_id": 66120,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - Love's Travel Stop",
+    "city": "Dandridge",
+    "state": "TN",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 66643,
+    "category": "catscale_temporary",
+    "station": "TEMP CLOSED - Deerfield Travel Plaza",
+    "city": "Steele",
+    "state": "MO",
+    "source_url": "https://catscale.com/exl.php",
+    "reason": "CAT Scale host entry is labeled TEMP CLOSED. This does not prove every fueling service on the property is closed.",
+    "review_record": "catscale-candidates.json"
+  },
+  {
+    "opis_id": 66715,
+    "category": "maps_permanent",
+    "station": "7-Eleven #34210",
+    "city": "Longmont",
+    "state": "CO",
+    "source_url": "https://www.google.com/maps/place/7-Eleven/data=!4m6!3m5!1s0x876c06482cfd483b:0xa5c927f6af97ffff!8m2!3d40.1618432!4d-104.9764785",
+    "reason": "The exact station listing was recorded as permanently closed during the property review.",
+    "review_record": "independent-colorado-seveneleven-conflict-reviews.json"
+  },
+  {
+    "opis_id": 67429,
+    "category": "maps_permanent",
+    "station": "7-Eleven 40396",
+    "city": "Monroe Township",
+    "state": "NJ",
+    "source_url": "https://www.google.com/maps/place/7-Eleven/data=!4m4!3m3!1s0x89c3db24032b8985:0xaa36ef86c013db12!8m2!3d40.3713186!4d-74.4589274",
+    "reason": "The exact station listing was recorded as permanently closed during the property review.",
+    "review_record": "independent-numbered-additional-conflict-reviews.json"
+  },
+  {
+    "opis_id": 71445,
+    "category": "maps_permanent",
+    "station": "Speedway original #1051",
+    "city": "Mauston",
+    "state": "WI",
+    "source_url": "https://www.google.com/maps/place/Speedway/data=!4m6!3m5!1s0x87fe011ba8f95517:0xf272dfdf66ff83e8!8m2!3d43.7975116!4d-90.0641392",
+    "reason": "The exact station listing was recorded as permanently closed during the property review.",
+    "review_record": "independent-speedway-history-conflict-reviews.json"
+  }
+]
